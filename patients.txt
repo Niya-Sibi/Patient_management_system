@@ -1,0 +1,4 @@
+0003,sreelekshmy,Female,thrissur,994652871,Dr. Patel,parecetamol
+0005,niya,Female,idukki,987456123,Dr. Jones,
+0008,vaishnavi,Female,trivandrum,987456321,Dr. Patel,montek
+0012,shruthi,female,trissur,659874123,Dr. Jones,

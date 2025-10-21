@@ -1,3 +1,0 @@
-Dr.Smith,password1
-Dr.Jones,password2
-Dr.Lee,password3

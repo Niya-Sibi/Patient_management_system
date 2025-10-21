@@ -1,56 +1,49 @@
 package model;
 
-import java.io.Serializable;
+public class Patient {
 
-public class Patient extends User implements Serializable {
-    private static final long serialVersionUID = 1L;
+    private String id;
+    private String name;
+    private String gender;
+    private String place;
+    private String phone;
+    private String assignedDoctor;
+    private String prescription;
 
-    private String medicalHistory;
-    private String contactNumber;
+    // No-argument constructor
+    public Patient() {}
 
-    public Patient(int id, String name, String username, String password, String medicalHistory, String contactNumber) {
-        super(id, name, username, password, Role.PATIENT);
-        validateInput(medicalHistory, contactNumber);
-        this.medicalHistory = medicalHistory;
-        this.contactNumber = contactNumber;
+    // All-argument constructor
+    public Patient(String id, String name, String gender, String place,
+                   String phone, String assignedDoctor, String prescription) {
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
+        this.place = place;
+        this.phone = phone;
+        this.assignedDoctor = assignedDoctor;
+        this.prescription = prescription;
     }
 
-    private void validateInput(String medicalHistory, String contactNumber) {
-        if (medicalHistory == null) {
-            throw new IllegalArgumentException("Medical history cannot be null");
-        }
-        if (contactNumber == null || contactNumber.trim().isEmpty()) {
-            throw new IllegalArgumentException("Contact number cannot be null or empty");
-        }
-    }
+    // --- Getters and Setters ---
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
-    // Getters and Setters
-    public String getMedicalHistory() {
-        return medicalHistory;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public void setMedicalHistory(String medicalHistory) {
-        validateInput(medicalHistory, this.contactNumber);
-        this.medicalHistory = medicalHistory;
-    }
+    public String getGender() { return gender; }
+    public void setGender(String gender) { this.gender = gender; }
 
-    public String getContactNumber() {
-        return contactNumber;
-    }
+    public String getPlace() { return place; }
+    public void setPlace(String place) { this.place = place; }
 
-    public void setContactNumber(String contactNumber) {
-        validateInput(this.medicalHistory, contactNumber);
-        this.contactNumber = contactNumber;
-    }
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
 
-    @Override
-    public String toString() {
-        return "Patient{" +
-                "id=" + getId() +
-                ", name='" + getName() + '\'' +
-                ", username='" + getUsername() + '\'' +
-                ", medicalHistory='" + medicalHistory + '\'' +
-                ", contactNumber='" + contactNumber + '\'' +
-                '}';
-    }
+    public String getAssignedDoctor() { return assignedDoctor; }
+    public void setAssignedDoctor(String assignedDoctor) { this.assignedDoctor = assignedDoctor; }
+
+    public String getPrescription() { return prescription; }
+    public void setPrescription(String prescription) { this.prescription = prescription; }
 }
